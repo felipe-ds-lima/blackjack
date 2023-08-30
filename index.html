@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blackjack 21</title>
+    <!-- <link rel="stylesheet" href="http://monts.com.br/site/montslib/css/buttons.css"> -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <script src="src/js/main.js"></script>
+</head>
+<body>
+
+    <div class="loader"></div>
+
+    <div class="login">
+        <form onsubmit=" event.preventDefault(); enterGame();">
+        <div>
+            <p>Player 1: </p>
+            <input type="text" name="player1" max="40" maxlength="40" autofocus autocomplete="off" placeholder="Nome do jogador 1" id="player1">
+        </div>
+
+        <div>
+            <p>Player 2: </p>
+            <input type="text" name="player2" max="40" maxlength="40" autocomplete="off" placeholder="Nome do jogador 2" id="player2">
+        </div>
+
+        <div>
+            <input type="submit" value="Entrar" class="btn btn-white">
+        </div>
+    </form>
+    </div>
+
+    <div class="game" style="display: none;">
+        
+        <!-- Jogo -->
+
+        <div class="box-player1">
+            <h1 class="player1Name playerName"></h1>
+            <div class="cards-box">
+                    
+            </div>
+        </div>
+
+        <div class="space" style="width: 200px;height: 1px;"></div>
+
+        <div class="box-player2">
+            <h1 class="player2Name playerName"></h1>
+            <div class="cards-box">
+                
+            </div>
+        </div>
+
+        <!-- cards para pegar -->
+        <div class="getCards" onclick="dispareGame()">
+            <div class="cardBack">
+                <div class="cardBack-logo"></div>
+            </div>
+            <div class="cardBack">
+                <div class="cardBack-logo"></div>
+            </div>
+            <div class="cardBack">
+                <div class="cardBack-logo"></div>
+            </div>
+            <div class="cardBack">
+                <div class="cardBack-logo"></div>
+            </div>
+            <div class="cardBack">
+                <div class="cardBack-logo"></div>
+            </div>
+        </div>
+        <!-- Placar -->
+
+        <div class="displayPlacar">
+            <div>
+                <span class="PlacarName1"></span>
+                <span class="placarPlayer1">0</span>
+            </div>
+            
+            <div>
+                <span class="PlacarName2"></span>
+                <span class="placarPlayer2">0</span>
+            </div>
+
+            <div>
+                <span>Empates: </span>
+                <span class="placarEmpates">0</span>
+            </div>
+
+            <div>
+                <span>Rodadas: </span>
+                <span class="placarRodadas">0</span>
+            </div>
+
+            <div>
+                <span class="message">&nbsp;</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal" style="display: none;">
+        <div class="modal-background"></div>
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-message"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    document.body.onload = ()=>{
+        document.querySelector(".loader").className = "loader hide";
+        setInterval(function(){
+            document.querySelector(".hide").style.display = "none";
+        }, 1000);
+    }
+</script>
+</html>

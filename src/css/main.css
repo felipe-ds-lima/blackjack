@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/bg.jpg");
+    overflow-x: hidden;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    background-image: url("../img/Blackjack.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 1;
+    top: calc(50% - 1px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hide{
+    transition: all 1s;
+    opacity: 0;
+    position: absolute;
+}
+
+.login div{
+    margin: 15px;
+}
+.btn{
+    margin-top: 15px;
+    width: 100%;
+}
+.login p{
+    color: #fff;
+    font-size: 2em;
+}
+.login input[type="text"]{
+    border: none;
+    border-radius: 7px;
+    padding: 7px 10px;
+}
+.login input{
+    font-size: 1.5em;
+}
+
+.game{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    min-height: 100vh;
+}
+.box-player2,
+.box-player1{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.playerName{
+    position: absolute;
+    top: 20px;
+    font-size: 4rem;
+    z-index: 1;
+}
+
+.displayPlacar{
+    width: 156px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 25px;
+    font-size: 1.5em;
+}
+.displayPlacar div{
+    margin: 20px 0;
+}
+
+.cards-box{
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(4rem + 30px);
+    min-width: 515px;
+    width: 70%;
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card{
+    color: #000;
+    margin: 10px;
+    min-width: 150px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em;
+    font-weight: 900;
+}
+.card-naipe{
+    width: 70px;
+    height: 70px;
+    background-size: 70px;
+}
+.paus{
+    background-image: url("../img/paus.png");
+}
+.ouros{
+    background-image: url("../img/ouros.png");
+}
+.copas{
+    background-image: url("../img/copas.png");
+}
+.espada{
+    background-image: url("../img/espada.png");
+}
+.red{
+    color: red;
+}
+.getCards{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 150px;
+    height: 200px;
+}
+.cardBack{
+    position: absolute;
+    top: 9px;
+    min-width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: repeating-linear-gradient(-45deg,
+        #131e29 0,
+        #131e29 5px,
+        #253a50 5px,
+        #253a50 10px
+    );
+    border: #fff 2px solid;
+    transition: all .5s;
+    cursor: pointer;
+}
+.cardBack:nth-last-child(1){
+    top: 0;
+}
+.cardBack:nth-last-child(2){
+    top: 3px;
+}
+.cardBack:nth-last-child(3){
+    top: 6px;
+}
+.cardBack:nth-last-child(4){
+    transform: rotate(5deg);
+}
+.cardBack:nth-last-child(5){
+    transform: rotate(-4deg);
+}
+.cardBack-logo{
+    background-image: url("../img/Logo\ Clara.png");
+    background-size:130px;
+    width: 130px;
+    height: 130px;
+}
+.getCards:hover .cardBack:nth-last-child(1){
+    top: -3px;
+}
+.getCards:active .cardBack:nth-last-child(1){
+    top: 0;
+}
+.points{
+    font-size: 1rem;
+}
+.explosion{
+    position: absolute;
+    top: calc(50% - 300px);
+    left: calc(50% - 300px);
+    width: 600px;
+    height: 600px;
+    background-image: url("../img/gif.gif");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.message{
+    white-space: nowrap;
+}
+
+
+/*MODAL*/
+
+.modal{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal .modal-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
+.modal .modal-box{
+    width: 330px;
+    height: 200px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 6px;
+    position: relative;
+}
+.modal .modal-box .modal-header{
+    position: absolute;
+    top: -2px;
+    width: 100%;
+    height: 42px;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    color: #fff;
+    z-index: 99;
+}
+.modal .modal-box .modal-body{
+    display: flex;
+    padding: 25px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 40px);
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    border-radius: 0 0 6px 6px;
+}
+
+
+@keyframes open {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes close {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
